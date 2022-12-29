@@ -1,0 +1,299 @@
+<html>
+  <head>
+  </head> 
+
+
+
+                                                                              <style>
+      #contador {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img.center {
+        display: block;
+        margin: auto;
+      }
+
+      img#bolo {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        margin-left: -50px;
+        margin-top: -50px;
+      }
+       
+
+      #botao {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+} 
+     
+     #botao2 {
+  position: absolute;
+  top: 120px;
+  left: 10px;
+}
+  
+    #botao3 {
+  position: absolute;
+  top: 160px;
+  left: 10px;
+}
+
+
+    #botao4 {
+  position: absolute;
+  top: 200px;
+  left: 10px;
+}
+
+    #botao5 {
+  position: absolute;
+  top: 240px;
+  left: 10px;
+}
+
+
+#valor-botao {
+  position: absolute;
+  top: 80;
+  left: 70;
+}
+ 
+
+#valor-botao2 {
+  position: absolute;
+  top: 120;
+  left: 90;
+}
+
+
+#valor-botao3 {
+  position: absolute;
+  top: 160;
+  left: 60;
+}
+
+
+#valor-botao4 {
+  position: absolute;
+  top: 200;
+  left: 80;
+}
+
+#valor-botao5 {
+  position: absolute;
+  top: 240;
+  left: 80;
+}
+
+ /* Adiciona a classe "girar" ao elemento da imagem do bolo */
+  img#bolo.girar {
+    /* Define a duração da animação em 5 segundos */
+    animation-duration: 5s;
+    /* Faz a animação continuar a girar indefinidamente */
+    animation-iteration-count: infinite;
+  }
+
+  /* Cria a animação de rotação */
+  @keyframes rotacao {
+    /* Define o estado inicial da animação */
+    from {
+      /* Não há rotação no início */
+      transform: rotate(0deg);
+    }
+    /* Define o estado final da animação */
+    to {
+      /* Rotação de 360 graus (completa) no final */
+      transform: rotate(360deg);
+    }
+  }
+}
+    
+      
+
+
+                                                                             </style>
+
+
+
+                                                                               <body>
+    
+    
+    <img src="https://o.remove.bg/downloads/214df8f6-8e70-4a2d-b56f-f31c242a94e2/images-removebg-preview.png" class="center">
+    <div id="contador">0</div>
+    <img id="bolo" class="girar" src="https://o.remove.bg/downloads/214df8f6-8e70-4a2d-b56f-f31c242a94e2/images-removebg-preview.png" class="center">
+   
+    <button id="botao" style="display: none;">Açúcar</button>
+    <div id="valor-botao">10</div>
+
+    <button id="botao2">Fermento</button>
+    <div id="valor-botao2">500</div>        
+
+    <button id="botao3">Vovó</button>
+    <div id="valor-botao3">50k</div>
+  
+    <button id="botao4">Recheio</button>
+    <div id="valor-botao4">100k</div>                                                                             
+   
+    <button id="botao5">Sua Mae</button>
+    <div id="valor-botao5">10M</div>  
+     
+
+
+                                                                                </body>
+
+                                                                                <script>
+    
+ 
+ // Variável para armazenar o ganho por clique
+    var ganhoPorClique = 1;
+
+    // Função para incrementar o contador em 1
+    function incrementarContador() {
+      // Obtém o elemento do contador
+      var contador = document.getElementById('contador');
+
+      // Incrementa o valor do contador em 1
+      contador.innerHTML = parseInt(contador.innerHTML) + ganhoPorClique;
+
+      // Verifica se o contador tem o valor 10
+      if (contador.innerHTML >= 10) {
+        // Exibe o botão
+        document.getElementById('botao').style.display = 'block';
+      }
+    }
+
+    // Adiciona um evento de clique no botão
+    document.getElementById('botao').addEventListener('click', function() {
+      // Obtém o elemento do contador
+      var contador = document.getElementById('contador');
+
+      // Verifica se o contador tem o valor 10 ou mais
+      if (contador.innerHTML >= 10) {
+        // Decrementa o contador em 10
+        contador.innerHTML = parseInt(contador.innerHTML) - 10;
+
+        // Aumenta o ganho por clique em 1
+        ganhoPorClique++;
+      } else {
+        // Exibe uma mensagem informando que é preciso atingir o valor 10 antes de clicar no botão
+    alert('VAI FARMA CARA PRECISA DE 10');
+  }
+});
+   
+
+ contador.innerHTML = parseInt(contador.innerHTML) + ganhoPorClique
+
+
+    // Adiciona um evento de clique no botão do bolo
+    document.getElementById('bolo').addEventListener('click', incrementarContador);
+
+       // Adiciona um evento de clique no segundo botão
+document.getElementById('botao2').addEventListener('click', function() {
+  // Obtém o elemento do contador
+  var contador = document.getElementById('contador');
+
+  // Verifica se o contador tem o valor 50 ou mais
+  if (contador.innerHTML >= 500) {
+    // Decrementa o contador em 500
+    contador.innerHTML = parseInt(contador.innerHTML) - 500;
+
+    // Aumenta o ganho por clique em 2
+    ganhoPorClique += 2;
+  } else {
+    // Exibe uma mensagem informando que é preciso atingir o valor 50 antes de clicar no botão
+    alert('VAI FARMA SEU MANÉ PRECISA DE 500');
+  }
+});
+    
+   
+    // Adiciona um evento de clique no terceiro botão
+document.getElementById('botao3').addEventListener('click', function() {
+  // Obtém o elemento do contador
+  var contador = document.getElementById('contador');
+
+  // Verifica se o contador tem o valor 50000 ou mais
+  if (contador.innerHTML >= 50000) {
+    // Decrementa o contador em 50000
+    contador.innerHTML = parseInt(contador.innerHTML) - 50000;
+
+    // Aumenta o ganho por clique em 5
+    ganhoPorClique += 5;
+  } else {
+    // Exibe uma mensagem informando que é preciso atingir o valor 50000 antes de clicar no botão
+    alert('VAI FARMA CARA PRECISA DE 50000');
+  }
+});
+
+
+   // Adiciona um evento de clique no terceiro botão
+document.getElementById('botao3').addEventListener('click', function() {
+  // Obtém o elemento do contador
+  var contador = document.getElementById('contador');
+
+  // Verifica se o contador tem o valor 100.000 ou mais
+  if (contador.innerHTML >= 100000) {
+    // Decrementa o contador em 100.000
+    contador.innerHTML = parseInt(contador.innerHTML) - 100000;
+
+    // Aumenta o ganho por clique em 10
+    ganhoPorClique += 10;
+  } else {
+    // Exibe uma mensagem informando que é preciso atingir o valor 100.000 antes de clicar no botão
+    alert('VAI FARMA CARA PRECISA DE 100.000');
+  }
+});
+ 
+   // Adiciona um evento de clique no terceiro botão
+document.getElementById('botao4').addEventListener('click', function() {
+  // Obtém o elemento do contador
+  var contador = document.getElementById('contador');
+
+  // Verifica se o contador tem o valor 100000 ou mais
+  if (contador.innerHTML >= 100000) {
+    // Decrementa o contador em 100000
+    contador.innerHTML = parseInt(contador.innerHTML) - 100000;
+
+    // Aumenta o ganho por clique em 100
+    ganhoPorClique += 100;
+  } else {
+    // Exibe uma mensagem informando que é preciso atingir o valor 100.000 antes de clicar no botão
+    alert('VAI FARMA CARA PRECISA DE 100.000');
+  }
+});
+ 
+
+
+// Adiciona um evento de clique no quarto botão
+document.getElementById('botao5').addEventListener('click', function() {
+  // Obtém o elemento do contador
+  var contador = document.getElementById('contador');
+
+  // Verifica se o contador tem o valor 10000000 ou mais
+  if (contador.innerHTML >= 10000000) {
+    // Decrementa o contador em 10000000
+    contador.innerHTML = parseInt(contador.innerHTML) - 10000000;
+
+    // Aumenta o ganho por clique em 100000
+    ganhoPorClique += 100000;
+  } else {
+    // Exibe uma mensagem informando que é preciso atingir o valor 10000000 antes de clicar no botão
+    alert('Você precisa de 10M para comprar este botão!');
+  }
+});
+  
+
+                                                                                   </script>
+</html>
